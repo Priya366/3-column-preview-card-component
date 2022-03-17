@@ -1,0 +1,155 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color-grid-sedan: hsl(31, 77%, 52%);
+    --bg-color-grid-suvs: hsl(184, 100%, 22%);
+    --bg-color-grid-luxury: hsl(179, 100%, 13%);
+    --clr-para-text: hsla(0, 0%, 100%, 0.75);
+    --clr-bg-button-headings: hsl(0, 0%, 95%);
+    --fs-body: 0.98rem;
+    --ff-primary: 'Lexend Deca', sans-serif;
+    --ff-secondary: 'Big Shoulders Display', sans-serif;
+    --fw-light: 400;
+    --fw-bold: 700;
+}
+
+
+/* TYPOGRAPHY  */
+
+h1,
+p,
+a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+h1 {
+    color: var(--clr-bg-button-headings);
+    margin-top: 1em;
+    font-size: 1.8rem;
+    font-weight: var(--fw-bold);
+}
+
+p {
+    font-family: var(--ff-secondary);
+    color: var(--clr-para-text);
+    margin: 1.4em 0;
+    font-weight: var(--fw-light);
+    padding: 0.5em 0;
+}
+
+.btn {
+    background-color: var(--clr-bg-button-headings);
+    padding: 0.5em 1.1em;
+    border-radius: 3rem;
+    margin-top: 1.5em;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.grid-sedan a {
+    color: var(--bg-color-grid-sedan);
+}
+
+.grid-suvs a {
+    color: var(--bg-color-grid-suvs);
+}
+
+.grid-luxury a {
+    color: var(--bg-color-grid-luxury);
+}
+
+.grid-sedan a:hover {
+    background-color: var(--bg-color-grid-sedan);
+    color: var(--clr-bg-button-headings);
+    border: 2px solid var(--clr-bg-button-headings);
+}
+
+.grid-suvs a:hover {
+    background-color: var(--bg-color-grid-suvs);
+    border: 2px solid var(--clr-bg-button-headings);
+    color: var(--clr-bg-button-headings);
+}
+
+.grid-luxury a:hover {
+    border: 2px solid var(--clr-bg-button-headings);
+    background-color: var(--bg-color-grid-luxury);
+    color: var(--clr-bg-button-headings);
+}
+
+
+/* GENERAL STYLING  */
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    line-height: 1.5;
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-light);
+    font-size: var(--fs-body);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* MAIN STYLING  */
+
+main {
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+/* GRID-CONTAINER  */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-sedan {
+    padding: 2em;
+    background-color: var(--bg-color-grid-sedan);
+}
+
+.grid-suvs {
+    padding: 2em;
+    background-color: var(--bg-color-grid-suvs);
+}
+
+.grid-luxury {
+    padding: 2em;
+    background-color: var(--bg-color-grid-luxury);
+}
+
+.grid-container img {
+    height: 28px;
+}
+
+
+/* MEDIA QUERIES FOR SMALLER SCREENS  */
+
+@media (max-width: 700px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    p {
+        margin-top: 1.2em;
+    }
+    .btn {
+        margin-top: 0.4em;
+    }
+    .grid-container img {
+        height: 32px;
+    }
+}
